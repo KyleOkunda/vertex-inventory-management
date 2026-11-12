@@ -1,0 +1,754 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertex Portal</title>
+
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Caveat:wght@600&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/frontend_template/assets/index.css" />
+  </head>
+  <body
+    class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-[#D8005A] selection:text-white min-h-screen"
+  >
+    <div id="root">
+      <div
+        class="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-9 h-9 rounded-lg bg-[#D8005A] text-white flex items-center justify-center shadow-xs"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-user w-5 h-5"
+              aria-hidden="true"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div>
+            <h2 class="text-base font-bold text-slate-900 leading-tight">
+              Create New System User
+            </h2>
+            <p class="text-xs text-slate-500">
+              Vertex Home Essentials · Identity &amp; Access Control
+            </p>
+          </div>
+        </div>
+        <button
+          class="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 rounded-lg transition-colors cursor-pointer"
+          aria-label="Close modal"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-x w-5 h-5"
+            aria-hidden="true"
+          >
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <form class="flex-1 overflow-y-auto p-6 space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 space-y-5">
+            <div class="bg-white border border-slate-200 rounded-xl p-4">
+              <h3
+                class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-1.5"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-user w-3.5 h-3.5 text-[#D8005A]"
+                  aria-hidden="true"
+                >
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle></svg
+                >1. Staff Identification &amp; Contact
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div>
+                  <label class="block text-xs font-medium text-slate-700 mb-1"
+                    >First Name <span class="text-rose-500">*</span></label
+                  ><input
+                    required=""
+                    placeholder="e.g. Liam"
+                    class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-700 mb-1"
+                    >Last Name <span class="text-rose-500">*</span></label
+                  ><input
+                    required=""
+                    placeholder="e.g. Vance"
+                    class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-700 mb-1"
+                    >Staff ID (Auto-Generated)</label
+                  >
+                  <div class="flex gap-1.5">
+                    <input
+                      required=""
+                      class="w-full text-xs px-3 py-2 font-mono border border-slate-300 rounded-lg bg-slate-50 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D8005A]"
+                      type="text"
+                      value="VTX-2026-9220"
+                    /><button
+                      type="button"
+                      title="Generate new ID"
+                      class="px-2.5 py-2 text-slate-500 hover:text-slate-800 hover:bg-slate-100 border border-slate-200 rounded-lg transition-colors cursor-pointer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-refresh-cw w-3.5 h-3.5"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"
+                        ></path>
+                        <path d="M21 3v5h-5"></path>
+                        <path
+                          d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"
+                        ></path>
+                        <path d="M8 16H3v5"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-700 mb-1"
+                    >Phone Number</label
+                  ><input
+                    placeholder="+44 7700 900..."
+                    class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
+                    type="tel"
+                    value="+44 7700 900"
+                  />
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="block text-xs font-medium text-slate-700 mb-1"
+                    >Official Vertex Login Email
+                    <span class="text-rose-500">*</span></label
+                  >
+                  <div class="relative">
+                    <input
+                      required=""
+                      placeholder="firstname.lastname@vertexhome.co"
+                      class="w-full text-xs px-3 py-2 pl-8 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
+                      type="email"
+                      value=""
+                    /><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-mail w-4 h-4 text-slate-400 absolute left-2.5 top-2.5"
+                      aria-hidden="true"
+                    >
+                      <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                      <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-4">
+              <h3
+                class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-1.5"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-shield w-3.5 h-3.5 text-[#00B5E2]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                  ></path></svg
+                >2. Role &amp; Organizational Placement
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div class="sm:col-span-2">
+                  <label class="block text-xs font-medium text-slate-700 mb-1.5"
+                    >System User Role</label
+                  >
+                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    <button
+                      type="button"
+                      class="p-2.5 rounded-lg text-left border transition-all cursor-pointer border-[#D8005A] bg-[#D8005A]/5 ring-1 ring-[#D8005A]"
+                    >
+                      <div
+                        class="text-xs font-bold text-slate-900 leading-tight"
+                      >
+                        Cashier &amp; POS
+                      </div>
+                      <div
+                        class="text-[10px] text-slate-500 line-clamp-1 mt-0.5"
+                      >
+                        Operates front-of-store checkout lanes, gift cards, and
+                        retail payment terminals.
+                      </div></button
+                    ><button
+                      type="button"
+                      class="p-2.5 rounded-lg text-left border transition-all cursor-pointer border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
+                    >
+                      <div
+                        class="text-xs font-bold text-slate-900 leading-tight"
+                      >
+                        Floor Sales
+                      </div>
+                      <div
+                        class="text-[10px] text-slate-500 line-clamp-1 mt-0.5"
+                      >
+                        Assists customers in Living, Dining &amp; Essentials,
+                        checks stock levels via tablet.
+                      </div></button
+                    ><button
+                      type="button"
+                      class="p-2.5 rounded-lg text-left border transition-all cursor-pointer border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
+                    >
+                      <div
+                        class="text-xs font-bold text-slate-900 leading-tight"
+                      >
+                        Inventory Lead
+                      </div>
+                      <div
+                        class="text-[10px] text-slate-500 line-clamp-1 mt-0.5"
+                      >
+                        Oversees inbound pallet delivery, backroom warehousing,
+                        and stock adjustments.
+                      </div></button
+                    ><button
+                      type="button"
+                      class="p-2.5 rounded-lg text-left border transition-all cursor-pointer border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
+                    >
+                      <div
+                        class="text-xs font-bold text-slate-900 leading-tight"
+                      >
+                        Supervisor
+                      </div>
+                      <div
+                        class="text-[10px] text-slate-500 line-clamp-1 mt-0.5"
+                      >
+                        Supervises sales floor staff, authorizes price
+                        overrides, and monitors department targets.
+                      </div></button
+                    ><button
+                      type="button"
+                      class="p-2.5 rounded-lg text-left border transition-all cursor-pointer border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
+                    >
+                      <div
+                        class="text-xs font-bold text-slate-900 leading-tight"
+                      >
+                        Customer Care
+                      </div>
+                      <div
+                        class="text-[10px] text-slate-500 line-clamp-1 mt-0.5"
+                      >
+                        Handles service desk queries, warranty exchanges, home
+                        delivery logistics, and complaints.
+                      </div></button
+                    ><button
+                      type="button"
+                      class="p-2.5 rounded-lg text-left border transition-all cursor-pointer border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
+                    >
+                      <div
+                        class="text-xs font-bold text-slate-900 leading-tight"
+                      >
+                        Asst. Manager
+                      </div>
+                      <div
+                        class="text-[10px] text-slate-500 line-clamp-1 mt-0.5"
+                      >
+                        Manages daily store operations, staff shifts, cash
+                        drawers, and escalated approvals.
+                      </div></button
+                    ><button
+                      type="button"
+                      class="p-2.5 rounded-lg text-left border transition-all cursor-pointer border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
+                    >
+                      <div
+                        class="text-xs font-bold text-slate-900 leading-tight"
+                      >
+                        IT Systems
+                      </div>
+                      <div
+                        class="text-[10px] text-slate-500 line-clamp-1 mt-0.5"
+                      >
+                        Maintains POS registers, user permissions, audit trails,
+                        and hardware terminals.
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-700 mb-1"
+                    >Department</label
+                  ><select
+                    class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] bg-white text-slate-900"
+                  >
+                    <option value="Point of Sale &amp; Checkout">
+                      Point of Sale &amp; Checkout
+                    </option>
+                    <option value="Living &amp; Bedding">
+                      Living &amp; Bedding
+                    </option>
+                    <option value="Kitchenware &amp; Dining">
+                      Kitchenware &amp; Dining
+                    </option>
+                    <option value="Home Essentials &amp; Cleaning">
+                      Home Essentials &amp; Cleaning
+                    </option>
+                    <option value="Warehouse, Inbound &amp; Logistics">
+                      Warehouse, Inbound &amp; Logistics
+                    </option>
+                    <option value="E-Commerce &amp; Online Fulfillment">
+                      E-Commerce &amp; Online Fulfillment
+                    </option>
+                    <option value="Store Operations &amp; Management">
+                      Store Operations &amp; Management
+                    </option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-700 mb-1"
+                    >Store / Hub Assignment</label
+                  ><select
+                    class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] bg-white text-slate-900"
+                  >
+                    <option value="Vertex Metro Central Flagship (#101)">
+                      Vertex Metro Central Flagship (#101)
+                    </option>
+                    <option value="Vertex Westgate Retail Park (#104)">
+                      Vertex Westgate Retail Park (#104)
+                    </option>
+                    <option value="Vertex Regional Distribution Hub (North)">
+                      Vertex Regional Distribution Hub (North)
+                    </option>
+                    <option value="Vertex Lakeside Shopping Center (#108)">
+                      Vertex Lakeside Shopping Center (#108)
+                    </option>
+                    <option value="Vertex E-Commerce Fulfillment HQ">
+                      Vertex E-Commerce Fulfillment HQ
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-4">
+              <div class="flex items-center justify-between mb-2">
+                <h3
+                  class="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-lock w-3.5 h-3.5 text-[#F6DE00]"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      width="18"
+                      height="11"
+                      x="3"
+                      y="11"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
+                  >3. Granular Permissions Matrix
+                </h3>
+                <button
+                  type="button"
+                  class="text-[11px] text-[#00B5E2] hover:underline"
+                >
+                  Reset to Role Defaults
+                </button>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <label
+                  class="flex items-start gap-2.5 p-2 rounded-lg border text-xs cursor-pointer transition-colors bg-slate-50 border-slate-300"
+                  ><input
+                    class="mt-0.5 rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                    type="checkbox"
+                    checked=""
+                  />
+                  <div>
+                    <div class="font-semibold text-slate-800 leading-tight">
+                      Process Point-of-Sale Checkout
+                    </div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">
+                      Ring up retail orders, accept payments (card, cash,
+                      contactless), and print receipts.
+                    </div>
+                  </div></label
+                ><label
+                  class="flex items-start gap-2.5 p-2 rounded-lg border text-xs cursor-pointer transition-colors bg-slate-50 border-slate-300"
+                  ><input
+                    class="mt-0.5 rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                    type="checkbox"
+                    checked=""
+                  />
+                  <div>
+                    <div class="font-semibold text-slate-800 leading-tight">
+                      Customer Returns &amp; Credit Notes
+                    </div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">
+                      Process product returns, issue store credit, and handle
+                      warranty claim exchange slips.
+                    </div>
+                  </div></label
+                ><label
+                  class="flex items-start gap-2.5 p-2 rounded-lg border text-xs cursor-pointer transition-colors bg-white border-slate-100 opacity-60"
+                  ><input
+                    class="mt-0.5 rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                    type="checkbox"
+                  />
+                  <div>
+                    <div class="font-semibold text-slate-800 leading-tight">
+                      Price &amp; Promotional Overrides
+                    </div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">
+                      Apply manager-approved discounts, price matching, and
+                      seasonal markdown corrections.
+                    </div>
+                  </div></label
+                ><label
+                  class="flex items-start gap-2.5 p-2 rounded-lg border text-xs cursor-pointer transition-colors bg-white border-slate-100 opacity-60"
+                  ><input
+                    class="mt-0.5 rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                    type="checkbox"
+                  />
+                  <div>
+                    <div class="font-semibold text-slate-800 leading-tight">
+                      Stock Scanning &amp; Barcoding
+                    </div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">
+                      Scan items for barcode verification, shelf replenishment,
+                      and cycle counts.
+                    </div>
+                  </div></label
+                ><label
+                  class="flex items-start gap-2.5 p-2 rounded-lg border text-xs cursor-pointer transition-colors bg-white border-slate-100 opacity-60"
+                  ><input
+                    class="mt-0.5 rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                    type="checkbox"
+                  />
+                  <div>
+                    <div class="font-semibold text-slate-800 leading-tight">
+                      Inbound Invoicing &amp; Stock Adjustments
+                    </div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">
+                      Log deliveries from logistics hub, write off damaged
+                      goods, and transfer stock between branches.
+                    </div>
+                  </div></label
+                ><label
+                  class="flex items-start gap-2.5 p-2 rounded-lg border text-xs cursor-pointer transition-colors bg-white border-slate-100 opacity-60"
+                  ><input
+                    class="mt-0.5 rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                    type="checkbox"
+                  />
+                  <div>
+                    <div class="font-semibold text-slate-800 leading-tight">
+                      Sales Turnover &amp; Department Reports
+                    </div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">
+                      View hourly store sales, department turnover KPIs, and
+                      inventory turnover ratios.
+                    </div>
+                  </div></label
+                ><label
+                  class="flex items-start gap-2.5 p-2 rounded-lg border text-xs cursor-pointer transition-colors bg-white border-slate-100 opacity-60"
+                  ><input
+                    class="mt-0.5 rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                    type="checkbox"
+                  />
+                  <div>
+                    <div class="font-semibold text-slate-800 leading-tight">
+                      Cash Drawer Balancing &amp; Safe Access
+                    </div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">
+                      Perform end-of-day register z-reads, safe drops, and cash
+                      reconciliation.
+                    </div>
+                  </div></label
+                ><label
+                  class="flex items-start gap-2.5 p-2 rounded-lg border text-xs cursor-pointer transition-colors bg-white border-slate-100 opacity-60"
+                  ><input
+                    class="mt-0.5 rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                    type="checkbox"
+                  />
+                  <div>
+                    <div class="font-semibold text-slate-800 leading-tight">
+                      Staff Account Provisioning
+                    </div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">
+                      Create new system logins, reset temporary passwords, and
+                      update role access.
+                    </div>
+                  </div></label
+                ><label
+                  class="flex items-start gap-2.5 p-2 rounded-lg border text-xs cursor-pointer transition-colors bg-white border-slate-100 opacity-60"
+                  ><input
+                    class="mt-0.5 rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                    type="checkbox"
+                  />
+                  <div>
+                    <div class="font-semibold text-slate-800 leading-tight">
+                      Security &amp; Terminal Audit Logs
+                    </div>
+                    <div class="text-[10px] text-slate-500 mt-0.5">
+                      Inspect compliance logs, failed login attempts, and
+                      manager overrides.
+                    </div>
+                  </div></label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="space-y-5">
+            <div class="bg-white border border-slate-200 rounded-xl p-4">
+              <h3
+                class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-1.5"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-key-round w-3.5 h-3.5 text-[#D8005A]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"
+                  ></path>
+                  <circle
+                    cx="16.5"
+                    cy="7.5"
+                    r=".5"
+                    fill="currentColor"
+                  ></circle></svg
+                >Security Credentials
+              </h3>
+              <div class="space-y-3.5 text-xs">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <label class="text-xs font-medium text-slate-700"
+                      >Initial Passkey</label
+                    ><button
+                      type="button"
+                      class="text-[11px] text-[#00B5E2] hover:underline flex items-center gap-1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-refresh-cw w-3 h-3"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"
+                        ></path>
+                        <path d="M21 3v5h-5"></path>
+                        <path
+                          d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"
+                        ></path>
+                        <path d="M8 16H3v5"></path>
+                      </svg>
+                      Regenerate
+                    </button>
+                  </div>
+                  <div class="relative">
+                    <input
+                      class="w-full text-xs font-mono px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D8005A]"
+                      type="text"
+                      value="Vtx!S8kuNFDF"
+                    />
+                  </div>
+                </div>
+                <div class="space-y-2 pt-2 border-t border-slate-100">
+                  <label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      class="rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                      type="checkbox"
+                      checked=""
+                    /><span class="text-xs text-slate-700"
+                      >Force password reset on first login</span
+                    ></label
+                  ><label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      class="rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                      type="checkbox"
+                    /><span class="text-xs text-slate-700"
+                      >Require 2FA Authentication (SMS/TOTP)</span
+                    ></label
+                  ><label class="flex items-center gap-2 cursor-pointer"
+                    ><input
+                      class="rounded border-slate-300 text-[#D8005A] focus:ring-[#D8005A]"
+                      type="checkbox"
+                      checked=""
+                    /><span class="text-xs text-slate-700"
+                      >Dispatch onboarding welcome kit to email</span
+                    ></label
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl p-4 shadow-md border border-slate-700 relative overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-24 h-24 bg-[#D8005A]/20 blur-xl pointer-events-none"
+              ></div>
+              <div
+                class="flex items-center justify-between pb-3 border-b border-slate-700/80 mb-3"
+              >
+                <span
+                  class="text-[10px] font-bold uppercase tracking-widest text-slate-400"
+                  >System ID Badge Preview</span
+                ><span class="font-mono text-xs text-[#00B5E2]"
+                  >VTX-2026-9220</span
+                >
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 rounded-lg bg-[#D8005A] flex items-center justify-center font-bold text-sm text-white shadow-xs"
+                >
+                  US
+                </div>
+                <div class="overflow-hidden">
+                  <div class="text-sm font-bold text-white truncate">
+                    First Lastname
+                  </div>
+                  <div class="text-[11px] text-[#F6DE00] font-medium truncate">
+                    Branch Cashier / POS Operator
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mt-3 pt-3 border-t border-slate-700/80 text-[11px] text-slate-300 space-y-1"
+              >
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Department:</span
+                  ><span class="text-right truncate max-w-[140px]"
+                    >Point of Sale &amp; Checkout</span
+                  >
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Location:</span
+                  ><span class="text-right truncate max-w-[140px]"
+                    >Vertex Metro Central Flagship</span
+                  >
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Active Permissions:</span
+                  ><span class="font-mono text-[#00B5E2] font-semibold"
+                    >2 granted</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-4 border-t border-slate-200 flex items-center justify-between"
+        >
+          <div class="text-xs text-slate-500">
+            Action will be audited under manager
+            <span class="font-medium text-slate-700">Evelyn Thorne</span>.
+          </div>
+          <div class="flex items-center gap-2">
+            <button
+              type="button"
+              class="px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
+            >
+              Cancel</button
+            ><button
+              type="submit"
+              class="px-5 py-2 text-xs font-semibold text-white bg-[#D8005A] hover:bg-[#BF004D] active:bg-[#A30041] rounded-lg shadow-sm transition-colors cursor-pointer"
+            >
+              Provision User Account
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
