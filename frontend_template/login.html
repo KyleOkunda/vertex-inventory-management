@@ -14,6 +14,7 @@
     />
 
     <link rel="stylesheet" href="/frontend_template/assets/index.css" />
+    <script type="module" src="assets/login.js"></script>
   </head>
   <body
     class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-[#D8005A] selection:text-white min-h-screen"
@@ -79,6 +80,7 @@
                     </svg>
                   </div>
                   <input
+                    id="email"
                     required=""
                     placeholder="johndoe@vertexhomeessentials.co.ke"
                     class="block w-full pl-9 pr-3 py-2.5 text-sm border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D8005A] focus:border-transparent transition-shadow"
@@ -121,6 +123,7 @@
                     </svg>
                   </div>
                   <input
+                    id="password"
                     required=""
                     placeholder="••••••••••••"
                     class="block w-full pl-9 pr-10 py-2.5 text-sm border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D8005A] focus:border-transparent transition-shadow"
@@ -164,6 +167,7 @@
               </div>
               <div>
                 <button
+                  id="login-button"
                   type="submit"
                   class="w-full flex items-center justify-center gap-2 py-3 px-4 border border-transparent rounded-lg shadow-md text-sm font-semibold text-white bg-[#D8005A] hover:bg-[#BF004D] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D8005A] transition-all cursor-pointer disabled:opacity-60"
                 >
