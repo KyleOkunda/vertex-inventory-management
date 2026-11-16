@@ -2,6 +2,15 @@ window.addEventListener("DOMContentLoaded", function () {
   var emailElement = document.getElementById("email");
   var passwordElement = document.getElementById("password");
   var loginButton = document.getElementById("login-button");
+  var showPasswordButton = document.getElementById("show-password");
+
+  showPasswordButton.addEventListener("click", function () {
+    if (passwordElement.type === "password") {
+      passwordElement.type = "text";
+    } else if (passwordElement.type === "text") {
+      passwordElement.type = "password";
+    }
+  });
 
   loginButton.addEventListener("click", function (event) {
     loginButton.setAttribute("disabled", "");

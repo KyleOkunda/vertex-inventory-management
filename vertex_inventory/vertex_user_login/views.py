@@ -3,6 +3,10 @@ from django.http import JsonResponse
 import json
 from django.contrib.auth.hashers import make_password, check_password
 from .models import VertexUsers
+from.utils import generate_tokens
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Create your views here.
 
@@ -10,11 +14,7 @@ def redirect_to_login(request):
     return redirect("login")
 
 def login_handler(request):
-    if request.method == "GET":
-        str = "vertex"
-        hashed_str = make_password(str)
-        #hashed_str = hashed_str[14:]
-        print(f"Hashed string: {hashed_str}")
+    if request.method == "GET":       
         return render(request, "login.html")
     elif request.method == "POST":        
         data = json.loads(request.body)
@@ -27,9 +27,18 @@ def login_handler(request):
 
         # Check if the email and password match the stored values
         try:
-            user_password = VertexUsers.objects.get(email=email).user_password
+            user = VertexUsers.objects.get(email=email)            
+            user_password = user.user_password
+            user_role = user.user_role
+            user_id = user.user_id
             if(check_password(password, "bcrypt_sha256$" + user_password)):
-                return JsonResponse({"message": "Login successful", "code": "LOGIN_SUCCESS"}, status=200)
+                tokens = generate_tokens(user_id, user_role)
+
+                #Set a cookie for the access token
+                response = JsonResponse({"message": "Login successful", "code": "LOGIN_SUCCESS",}, status=200)
+                response.set_cookie("access_token", tokens["access_token"], 60, secure=os.getenv("IS_PRODUCTION") == "True", httponly=True)
+                response.set_cookie("refresh_token", tokens["refresh_token"], 60*10, secure=os.getenv("IS_PRODUCTION") == "True", httponly=True)
+                return response
             else:
                 return JsonResponse({"message": "Invalid email or password", "code": "INVALID_CREDENTIALS"}, status=401)
                         
