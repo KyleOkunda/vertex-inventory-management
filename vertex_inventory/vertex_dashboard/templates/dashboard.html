@@ -1,0 +1,642 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertex Portal</title>
+
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Caveat:wght@600&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/frontend_template/assets/index.css" />
+  </head>
+  <body
+    class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-[#D8005A] selection:text-white min-h-screen"
+  >
+    <div id="root">
+      <header
+        class="sticky top-0 z-30 bg-white border-b border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.03)]"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between gap-8 h-16">
+            <div class="flex items-center gap-3 whitespace-nowrap shrink-0">
+              <div
+                class="h-9 rounded-md overflow-hidden flex items-center bg-[#D8005A] p-1 shadow-sm"
+              >
+                <img
+                  alt="Vertex Home Essentials Ltd."
+                  class="h-full w-auto object-contain"
+                  referrerpolicy="no-referrer"
+                  src="/frontend_template/assets/images/vertex_logo.png"
+                />
+              </div>
+              <div class="flex flex-col">
+                <span
+                  class="font-extrabold tracking-tight text-slate-900 text-base leading-none"
+                  >vertex<span
+                    class="inline-block w-1.5 h-1.5 rounded-full bg-[#00B5E2] ml-0.5 align-top"
+                  ></span></span
+                ><span
+                  class="text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-0.5"
+                  >Portal</span
+                >
+              </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+              <button
+                class="whitespace-nowrap pb-1 transition-colors relative text-[#D8005A] font-semibold"
+              >
+                Staff Directory<span
+                  class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#D8005A] rounded-full"
+                ></span></button
+              ><button
+                class="whitespace-nowrap pb-1 transition-colors relative text-slate-600 hover:text-slate-900"
+              >
+                Menu Item</button
+              ><button
+                class="whitespace-nowrap pb-1 transition-colors relative text-slate-600 hover:text-slate-900"
+              >
+                Menu Item
+              </button>
+            </nav>
+            <div class="flex items-center gap-3 shrink-0">
+              <div
+                class="hidden lg:flex items-center gap-2.5 pl-3 pr-2 py-1 bg-slate-50 border border-slate-200 rounded-lg"
+              >
+                <div
+                  class="w-7 h-7 rounded-md bg-[#D8005A] text-white flex items-center justify-center font-bold text-xs shadow-xs"
+                >
+                  ET
+                </div>
+                <div class="flex flex-col text-left">
+                  <div class="flex items-center gap-1.5 leading-tight">
+                    <span
+                      class="text-xs font-semibold text-slate-900 truncate max-w-[120px]"
+                      >Evelyn Thorne</span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-shield-check w-3 h-3 text-[#00B5E2]"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                      ></path>
+                      <path d="m9 12 2 2 4-4"></path>
+                    </svg>
+                  </div>
+                  <span
+                    class="text-[11px] text-slate-500 truncate max-w-[130px]"
+                    >Senior Operations &amp; Retail Director</span
+                  >
+                </div>
+              </div>
+              <button
+                id="log-out-btn"
+                class="p-2 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
+                title="Sign out of Manager Console"
+                aria-label="Sign out"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-log-out w-4 h-4"
+                  aria-hidden="true"
+                >
+                  <path d="m16 17 5-5-5-5"></path>
+                  <path d="M21 12H9"></path>
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div
+          class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-slate-200"
+        >
+          <div>
+            <div
+              class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#D8005A]"
+            >
+              <span>Vertex Home Essentials Ltd.</span><span>·</span
+              ><span class="text-slate-500 font-normal"
+                >Good Living everyday</span
+              >
+            </div>
+            <h1
+              class="text-2xl font-extrabold text-slate-900 tracking-tight mt-1"
+            >
+              User Management
+            </h1>
+            <p class="text-xs text-slate-600 mt-0.5">
+              Welcome back,
+              <strong class="text-slate-800">Evelyn Thorne</strong>
+            </p>
+          </div>
+        </div>
+
+        <section>
+          <div id="new-user-create">
+            <div
+              class="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-9 h-9 rounded-lg bg-[#D8005A] text-white flex items-center justify-center shadow-xs"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-user w-5 h-5"
+                    aria-hidden="true"
+                  >
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-base font-bold text-slate-900 leading-tight">
+                    Create New System User
+                  </h2>
+                  <!--
+                  <p class="text-xs text-slate-500">
+                    Vertex Home Essentials · Identity &amp; Access Control
+                  </p>
+                  -->
+                </div>
+              </div>
+              <button
+                class="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 rounded-lg transition-colors cursor-pointer"
+                aria-label="Close modal"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-x w-5 h-5"
+                  aria-hidden="true"
+                >
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+              </button>
+            </div>
+
+            <form class="flex-1 overflow-y-auto p-6 space-y-6">
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 space-y-5">
+                  <div class="bg-white border border-slate-200 rounded-xl p-4">
+                    <h3
+                      class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-1.5"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-user w-3.5 h-3.5 text-[#D8005A]"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
+                        ></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                      1. Staff Identification &amp; Contact
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      <div>
+                        <label
+                          class="block text-xs font-medium text-slate-700 mb-1"
+                          >First Name
+                          <span class="text-rose-500">*</span></label
+                        ><input
+                          required=""
+                          placeholder="e.g. Liam"
+                          class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div>
+                        <label
+                          class="block text-xs font-medium text-slate-700 mb-1"
+                          >Last Name <span class="text-rose-500">*</span></label
+                        ><input
+                          required=""
+                          placeholder="e.g. Mwangi"
+                          class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+
+                      <div>
+                        <label
+                          class="block text-xs font-medium text-slate-700 mb-1"
+                          >Phone Number</label
+                        ><input
+                          placeholder="07700..."
+                          class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
+                          type="tel"
+                          value=""
+                        />
+                      </div>
+                      <div>
+                        <label
+                          class="block text-xs font-medium text-slate-700 mb-1"
+                          >Staff Email
+                          <span class="text-rose-500">*</span></label
+                        >
+                        <div class="relative">
+                          <input
+                            required=""
+                            placeholder="betty@vertexhomeessentials.co.ke"
+                            class="w-full text-xs px-3 py-2 pl-8 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
+                            type="email"
+                            value=""
+                          /><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-mail w-4 h-4 text-slate-400 absolute left-2.5 top-2.5"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                            ></path>
+                            <rect
+                              x="2"
+                              y="4"
+                              width="20"
+                              height="16"
+                              rx="2"
+                            ></rect>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-white border border-slate-200 rounded-xl p-4">
+                    <h3
+                      class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-1.5"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-shield w-3.5 h-3.5 text-[#00B5E2]"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                        ></path>
+                      </svg>
+                      2. Role &amp; Organizational Placement
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      <div class="sm:col-span-2">
+                        <label
+                          class="block text-xs font-medium text-slate-700 mb-1.5"
+                          >System User Role</label
+                        >
+                        <div class="mb-6 grid grid-cols-2 sm:grid-cols-3 gap-2">
+                          <select
+                            class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] bg-white text-slate-900"
+                          >
+                            <option value="">Select Role for New User</option>
+                            <option value="manager">Manager</option>
+                            <option value="accountant">Accountant</option>
+                            <option value="stock-manager">Stock Manager</option>
+                          </select>
+                        </div>
+                        <div class="mb-6">
+                          <label
+                            class="block text-xs font-medium text-slate-700 mb-1"
+                            >Department</label
+                          >
+                          <select
+                            class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] bg-white text-slate-900"
+                          >
+                            <option value="inventory-management" selected>
+                              Inventory Management
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-white border border-slate-200 rounded-xl p-4">
+                    <h3
+                      class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-1.5"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-shield w-3.5 h-3.5 text-[#00B5E2]"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                        ></path>
+                      </svg>
+                      3. User Access Credentials
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      <div>
+                        <label
+                          class="block text-xs font-medium text-slate-700 mb-1"
+                        >
+                          User Temporary Password
+                          <span class="text-rose-500">*</span></label
+                        >
+
+                        <div class="relative rounded-lg shadow-xs">
+                          <div
+                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-lock h-4 w-4"
+                              aria-hidden="true"
+                            >
+                              <rect
+                                width="18"
+                                height="11"
+                                x="3"
+                                y="11"
+                                rx="2"
+                                ry="2"
+                              ></rect>
+                              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                          </div>
+                          <input
+                            id="temporary-password"
+                            required=""
+                            placeholder="••••••••••••"
+                            class="block w-full pl-9 pr-10 py-2.5 text-sm border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D8005A] focus:border-transparent transition-shadow"
+                            type="password"
+                            value=""
+                          /><button
+                            type="button"
+                            id="show-temporary-password"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 cursor-pointer"
+                            aria-label="Show password"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-eye h-4 w-4"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                              ></path>
+                              <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label
+                          class="block text-xs font-medium text-slate-700 mb-1"
+                        >
+                          Confirm Temporary Password
+                          <span class="text-rose-500">*</span></label
+                        >
+
+                        <div class="relative rounded-lg shadow-xs">
+                          <div
+                            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-lock h-4 w-4"
+                              aria-hidden="true"
+                            >
+                              <rect
+                                width="18"
+                                height="11"
+                                x="3"
+                                y="11"
+                                rx="2"
+                                ry="2"
+                              ></rect>
+                              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                          </div>
+                          <input
+                            required=""
+                            placeholder="••••••••••••"
+                            class="block w-full pl-9 pr-10 py-2.5 text-sm border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D8005A] focus:border-transparent transition-shadow"
+                            type="password"
+                            value=""
+                            id="confirm-temporary-password"
+                          /><button
+                            type="button"
+                            id="show-confirm-temporary-password"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 cursor-pointer"
+                            aria-label="Show password"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="lucide lucide-eye h-4 w-4"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                              ></path>
+                              <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="space-y-5">
+                  <div
+                    class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl p-4 shadow-md border border-slate-700 relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute top-0 right-0 w-24 h-24 bg-[#D8005A]/20 blur-xl pointer-events-none"
+                    ></div>
+                    <div
+                      class="flex items-center justify-between pb-3 border-b border-slate-700/80 mb-3"
+                    >
+                      <span
+                        class="text-[10px] font-bold uppercase tracking-widest text-slate-400"
+                        >System ID Badge Preview</span
+                      >
+                      <!--
+                      <span class="font-mono text-xs text-[#00B5E2]"
+                        >VTX-2026-9220</span
+                      >
+                      -->
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-lg bg-[#D8005A] flex items-center justify-center font-bold text-sm text-white shadow-xs"
+                      >
+                        US
+                      </div>
+                      <div class="overflow-hidden">
+                        <div class="text-sm font-bold text-white truncate">
+                          John Doe
+                        </div>
+                        <div
+                          class="text-[11px] text-[#F6DE00] font-medium truncate"
+                        >
+                          Stock Manager
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="mt-3 pt-3 border-t border-slate-700/80 text-[11px] text-slate-300 space-y-1"
+                    >
+                      <div class="flex justify-between">
+                        <span class="text-slate-400">Department:</span
+                        ><span class="text-right truncate max-w-[140px]"
+                          >Inventory Management</span
+                        >
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="text-slate-400">Telephone:</span
+                        ><span class="text-right truncate max-w-[140px]"
+                          >0700........</span
+                        >
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="text-slate-400">Email:</span
+                        ><span class="font-mono text-[#00B5E2] font-semibold"></span>
+                          betty@vertexhomeessentials.co.ke</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="pt-4 border-t border-slate-200 flex items-center justify-between"
+              >
+                <div class="text-xs text-slate-500">
+                  Action will be recorded under manager
+                  <span class="font-medium text-slate-700">Evelyn Thorne</span>.
+                </div>
+                <div class="flex items-center gap-2">
+                  <button
+                    id="reset-form-btn"
+                    type="button"
+                    class="px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
+                  >
+                    Reset</button
+                  ><button
+                  id="create-user-btn"
+                    type="submit"
+                    class="px-5 py-2 text-xs font-semibold text-white bg-[#D8005A] hover:bg-[#BF004D] active:bg-[#A30041] rounded-lg shadow-sm transition-colors cursor-pointer"
+                  >
+                    Create User Account
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

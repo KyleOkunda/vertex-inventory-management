@@ -57,7 +57,7 @@ window.addEventListener("DOMContentLoaded", function () {
           return;
         } else if (data.code == "LOGIN_SUCCESS") {
           alert(data.message);
-          // window.location.href = "/dashboard/";
+          window.location.href = "/dashboard/";
           return;
         }
       });

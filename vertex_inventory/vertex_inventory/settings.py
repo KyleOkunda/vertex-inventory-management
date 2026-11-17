@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "vertex_user_login.apps.VertexUserLoginConfig",
+    "vertex_dashboard.apps.VertexDashboardConfig",
 ]
 
 MIDDLEWARE = [

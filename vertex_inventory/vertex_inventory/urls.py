@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("vertex_user_login.urls")),
+    path("dashboard/", include("vertex_dashboard.urls")),
 ]
