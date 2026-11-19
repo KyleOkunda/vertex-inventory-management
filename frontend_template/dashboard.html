@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Caveat:wght@600&amp;display=swap"
       rel="stylesheet"
     />
-
+    <script type="module" src="/frontend_template/assets/new_user.js"></script>
     <link rel="stylesheet" href="/frontend_template/assets/index.css" />
   </head>
   <body
@@ -251,11 +251,13 @@
                           >First Name
                           <span class="text-rose-500">*</span></label
                         ><input
+                          id="first-name"
                           required=""
                           placeholder="e.g. Liam"
                           class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
                           type="text"
                           value=""
+                          maxlength="20"
                         />
                       </div>
                       <div>
@@ -263,23 +265,28 @@
                           class="block text-xs font-medium text-slate-700 mb-1"
                           >Last Name <span class="text-rose-500">*</span></label
                         ><input
+                          id="last-name"
                           required=""
                           placeholder="e.g. Mwangi"
                           class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
                           type="text"
                           value=""
+                          maxlength="20"
                         />
                       </div>
 
                       <div>
                         <label
                           class="block text-xs font-medium text-slate-700 mb-1"
-                          >Phone Number</label
+                          >Phone Number
+                          <span class="text-rose-500">*</span></label
                         ><input
+                          id="phone-number"
                           placeholder="07700..."
                           class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
                           type="tel"
                           value=""
+                          maxlength="12"
                         />
                       </div>
                       <div>
@@ -290,6 +297,7 @@
                         >
                         <div class="relative">
                           <input
+                            id="staff-email"
                             required=""
                             placeholder="betty@vertexhomeessentials.co.ke"
                             class="w-full text-xs px-3 py-2 pl-8 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] text-slate-900"
@@ -351,10 +359,11 @@
                       <div class="sm:col-span-2">
                         <label
                           class="block text-xs font-medium text-slate-700 mb-1.5"
-                          >System User Role</label
+                          >User Role <span class="text-rose-500">*</span></label
                         >
                         <div class="mb-6 grid grid-cols-2 sm:grid-cols-3 gap-2">
                           <select
+                            id="user-role"
                             class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] bg-white text-slate-900"
                           >
                             <option value="">Select Role for New User</option>
@@ -366,9 +375,11 @@
                         <div class="mb-6">
                           <label
                             class="block text-xs font-medium text-slate-700 mb-1"
-                            >Department</label
+                            >Department
+                            <span class="text-rose-500">*</span></label
                           >
                           <select
+                            id="department"
                             class="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D8005A] bg-white text-slate-900"
                           >
                             <option value="inventory-management" selected>
@@ -545,6 +556,12 @@
                           </button>
                         </div>
                       </div>
+                      <div>
+                        <span
+                          id="password-message"
+                          class="text-rose-500 text-xs"
+                        ></span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -570,19 +587,25 @@
                     </div>
                     <div class="flex items-center gap-3">
                       <div
+                        id="user-initials"
                         class="w-10 h-10 rounded-lg bg-[#D8005A] flex items-center justify-center font-bold text-sm text-white shadow-xs"
                       >
-                        US
+                        <span id="first-name-letter">V</span>
+                        <span id="last-name-letter"></span>
                       </div>
                       <div class="overflow-hidden">
-                        <div class="text-sm font-bold text-white truncate">
-                          John Doe
-                        </div>
                         <div
+                          id="user-card-fname"
+                          class="text-sm font-bold text-white truncate"
+                        ></div>
+                        <div
+                          id="user-card-lname"
+                          class="text-sm font-bold text-white truncate"
+                        ></div>
+                        <div
+                          id="user-card-role"
                           class="text-[11px] text-[#F6DE00] font-medium truncate"
-                        >
-                          Stock Manager
-                        </div>
+                        ></div>
                       </div>
                     </div>
                     <div
@@ -590,21 +613,25 @@
                     >
                       <div class="flex justify-between">
                         <span class="text-slate-400">Department:</span
-                        ><span class="text-right truncate max-w-[140px]"
+                        ><span
+                          id="user-card-dept"
+                          class="text-right truncate max-w-[140px]"
                           >Inventory Management</span
                         >
                       </div>
                       <div class="flex justify-between">
                         <span class="text-slate-400">Telephone:</span
-                        ><span class="text-right truncate max-w-[140px]"
-                          >0700........</span
-                        >
+                        ><span
+                          id="user-card-phone"
+                          class="text-right truncate max-w-[140px]"
+                        ></span>
                       </div>
                       <div class="flex justify-between">
                         <span class="text-slate-400">Email:</span
-                        ><span class="font-mono text-[#00B5E2] font-semibold"></span>
-                          betty@vertexhomeessentials.co.ke</span
-                        >
+                        ><span
+                          id="user-card-email"
+                          class="font-mono text-[#00B5E2] font-semibold"
+                        ></span>
                       </div>
                     </div>
                   </div>
@@ -625,7 +652,7 @@
                   >
                     Reset</button
                   ><button
-                  id="create-user-btn"
+                    id="create-user-btn"
                     type="submit"
                     class="px-5 py-2 text-xs font-semibold text-white bg-[#D8005A] hover:bg-[#BF004D] active:bg-[#A30041] rounded-lg shadow-sm transition-colors cursor-pointer"
                   >
