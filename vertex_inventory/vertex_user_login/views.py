@@ -5,6 +5,8 @@ from django.contrib.auth.hashers import make_password, check_password
 from .models import VertexUsers
 from.utils import generate_tokens
 import os
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -33,6 +35,7 @@ def login_handler(request):
             user_id = user.user_id
             if(check_password(password, "bcrypt_sha256$" + user_password)):
                 tokens = generate_tokens(user_id, user_role)
+                user.last_login = datetime.now(ZoneInfo("Africa/Nairobi"))
 
                 #Set a cookie for the access token
                 response = JsonResponse({"message": "Login successful", "code": "LOGIN_SUCCESS",}, status=200)
