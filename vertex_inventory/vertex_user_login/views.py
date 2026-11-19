@@ -36,8 +36,8 @@ def login_handler(request):
 
                 #Set a cookie for the access token
                 response = JsonResponse({"message": "Login successful", "code": "LOGIN_SUCCESS",}, status=200)
-                response.set_cookie("access_token", tokens["access_token"], 60, secure=os.getenv("IS_PRODUCTION") == "True", httponly=True)
-                response.set_cookie("refresh_token", tokens["refresh_token"], 60*10, secure=os.getenv("IS_PRODUCTION") == "True", httponly=True)
+                response.set_cookie("access_token", tokens["access_token"], 60*10, secure=os.getenv("IS_PRODUCTION") == "True", httponly=True)
+                response.set_cookie("refresh_token", tokens["refresh_token"], 60*60, secure=os.getenv("IS_PRODUCTION") == "True", httponly=True)
                 return response
             else:
                 return JsonResponse({"message": "Invalid email or password", "code": "INVALID_CREDENTIALS"}, status=401)

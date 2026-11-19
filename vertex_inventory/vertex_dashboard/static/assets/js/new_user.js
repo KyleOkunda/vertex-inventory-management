@@ -106,6 +106,7 @@ window.addEventListener("DOMContentLoaded", function () {
   // Create user button click
   createUserBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    createUserBtn.setAttribute("disabled", "");
     let firstName = firstNameElement.value;
     let lastName = lastNameElement.value;
     let phone = phoneNumberElement.value;
@@ -117,37 +118,83 @@ window.addEventListener("DOMContentLoaded", function () {
 
     if (!(firstName || lastName)) {
       alert("Please provide both first name and last name.");
+      createUserBtn.removeAttribute("disabled");
       return;
     }
 
     if (!(phone || staffEmail)) {
       alert("Please provide both telephone number and staff email.");
+      createUserBtn.removeAttribute("disabled");
       return;
     }
 
     if (!(userRole || department)) {
       alert("Please provide the user role and department of the user.");
+      createUserBtn.removeAttribute("disabled");
       return;
     }
 
     if (!temporaryPassword) {
       alert("Provide a temporary password for the user.");
+      createUserBtn.removeAttribute("disabled");
       return;
     }
 
     if (!confirmPassword) {
       alert("Please confirm temporary password");
+      createUserBtn.removeAttribute("disabled");
       return;
     }
 
-    if (!(staffEmail.contains("@") && staffEmail.contains("."))) {
+    if (!(staffEmail.includes("@") && staffEmail.includes("."))) {
       alert("Please enter a valid email");
+      createUserBtn.removeAttribute("disabled");
       return;
     }
 
     if (temporaryPassword != confirmPassword) {
       alert("Passwords entered do not match.");
+      createUserBtn.removeAttribute("disabled");
       return;
     }
+
+    // Get csrf token from cookie
+    var cookies = document.cookie.split("; ");
+    var csrfToken = null;
+    cookies.forEach((cookie) => {
+      if (cookie.includes("csrftoken")) {
+        csrfToken = cookie.split("=")[1];
+      }
+    });
+
+    fetch("/dashboard/user/new/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": csrfToken,
+      },
+      body: JSON.stringify({
+        first_name: firstName,
+        last_name: lastName,
+        phone_number: phone,
+        staff_email: staffEmail,
+        user_role: userRole,
+        department: department,
+        temporary_password: temporaryPassword,
+        confirm_password: confirmPassword,
+      }),
+    })
+      .then((Response) => Response.json())
+      .then((data) => {
+        if (data.code == "USER_CREATION_SUCCESS") {
+          alert(data.message);
+          window.location.reload();
+          return;
+        } else {
+          alert(data.message || "An error occurred while creating the user.");
+          createUserBtn.removeAttribute("disabled");
+          return;
+        }
+      });
   });
 });
