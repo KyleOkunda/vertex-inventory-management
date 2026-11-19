@@ -35,6 +35,8 @@ def authenticate_user(request):
             return redirect("login") # "Refresh token expired. Please log in again.
         elif response_data == "INVALID_REFRESH_TOKEN":
             return redirect("login") # "Invalid refresh token. Please log in again.
+    elif token_validity is True:
+        print("User successfully authenticated.")
 
 
 def authenticate_token(request):
